@@ -12,7 +12,7 @@
 	  4. Delete the original script from ServerStorage.
 	  5. The plugin appears on the Plugins tab as "Animation Teacher".
 
-	Built: 2026-07-28 10:12 UTC
+	Source revision: 9841333d1c77
 	Modules: 12
 ]]
 

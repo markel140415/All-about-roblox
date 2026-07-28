@@ -15,8 +15,7 @@ Usage:  python3 tools/build.py
 """
 import os
 import sys
-import html
-from datetime import datetime, timezone
+import hashlib
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import bundler  # noqa: E402
@@ -41,7 +40,7 @@ HEADER = """--[[
 	  4. Delete the original script from ServerStorage.
 	  5. The plugin appears on the Plugins tab as "Animation Teacher".
 
-	Built: {built}
+	Source revision: {revision}
 	Modules: {count}
 ]]
 """
@@ -71,6 +70,22 @@ end
 """
 
 
+def source_revision():
+    """
+    A stable identifier for the bundled sources.
+
+    Deliberately NOT a wall-clock timestamp: build/ is committed as the
+    installable artifact, and a timestamp would make every rebuild produce a
+    spurious diff. Hashing the sources means the file only changes when the
+    code actually changes, so the build is reproducible.
+    """
+    digest = hashlib.sha256()
+    for module_path, file_path in bundler.discover(SRC):
+        digest.update(module_path.encode("utf-8"))
+        digest.update(bundler.read(file_path).encode("utf-8"))
+    return digest.hexdigest()[:12]
+
+
 def build_bundle():
     modules = bundler.discover(SRC)
     if not modules:
@@ -82,7 +97,7 @@ def build_bundle():
 
     parts = [
         HEADER.format(
-            built=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+            revision=source_revision(),
             count=len(modules),
         ),
         SHIM,
