@@ -1,13 +1,24 @@
-# Python
+# --- Python (AnimTeacher: сборка и тесты) ---
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 
-# OS
+# --- Операционные системы ---
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Editors
+# --- Редакторы и IDE ---
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# --- Roblox Studio ---
+# Бинарные файлы мест/моделей: текстовые исходники версионируются,
+# для моделей можно использовать Rojo (rojo.space).
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx

@@ -176,3 +176,18 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the design.
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+## 📚 All about Roblox — гайды и примеры для начинающих
+
+Помимо плагина AnimTeacher, в репозитории есть **русскоязычные материалы по Roblox и Luau**:
+
+- **[docs/](docs/)** — 7 разделов: [что такое Roblox](docs/01-chto-takoe-roblox.md),
+  [первые шаги в Studio](docs/02-pervye-shagi-v-studio.md), [основы Luau](docs/03-osnovy-luau.md),
+  [скриптинг](docs/04-skripting-v-roblox.md), [создание и продвижение игры](docs/05-sozdanie-i-prodvizhenie-igry.md),
+  [оптимизация производительности](docs/06-optimizatsiya-proizvoditelnosti.md) и [безопасность](docs/07-bezopasnost.md).
+- **[scripts/](scripts/)** — 5 готовых примеров скриптов на Luau с комментариями
+  (leaderstats, сбор монет, смена дня и ночи, телепорт-площадки, двойной прыжок).
+- **[resources/poleznye-ssylki.md](resources/poleznye-ssylki.md)** — официальные ресурсы и инструменты разработчика.
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** — как дополнять гайды и примеры.
